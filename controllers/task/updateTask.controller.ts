@@ -35,7 +35,7 @@ const updateTask = async (req: RequestType, res: Response) => {
 	try {
 		// Destructure the request parameters and body
 		const { id } = req.params;
-		const userID = req?.user?._id;
+		const userID: any = req?.user?._id;
 		const { title, description, deadline, isCompleted } = req.body;
 
 		// Find the task by ID

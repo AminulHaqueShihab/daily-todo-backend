@@ -19,7 +19,7 @@ const getTaskById = async (req: RequestType, res: Response) => {
 	try {
 		// Destructure the request parameters
 		const { id } = req.params;
-		const userID = req?.user?._id;
+		const userID: any = req?.user?._id;
 
 		// Find the task by ID
 		const task = await Task.findById(id);
