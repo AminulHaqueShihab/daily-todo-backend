@@ -19,14 +19,14 @@ const schema = new Schema<UserType>(
 		},
 		email: {
 			type: String,
-			required: false,
+			required: true,
 			trim: true,
 			lowercase: true,
 			unique: true,
 		},
 		phone: {
 			type: String,
-			required: true,
+			required: false,
 			trim: true,
 			unique: true,
 			match: [/^(01\d{9})$/, 'Please fill a valid phone number'],
