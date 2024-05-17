@@ -2,7 +2,7 @@
 	"name": "daily-todo-backend",
 	"version": "1.0.0",
 	"description": "This is the backend for the daily todo app",
-	"main": "server.js",
+	"main": "server.ts",
 	"type": "module",
 	"scripts": {
 		"build": "npx tsc",
