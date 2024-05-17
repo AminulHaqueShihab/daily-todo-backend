@@ -56,7 +56,7 @@ const updateTask = async (req: RequestType, res: Response) => {
 		task.title = title;
 		task.description = description;
 		task.deadline = deadline;
-		task.isCompleted = isCompleted;
+		task.isCompleted = task.isCompleted;
 
 		// Save the task
 		const saved = await task.save();
