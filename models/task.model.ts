@@ -4,6 +4,7 @@ import jwt from 'jsonwebtoken';
 export type TaskType = Document & {
 	title: string;
 	description?: string;
+	userID: mongoose.Schema.Types.ObjectId;
 	deadline?: Date;
 	isCompleted: boolean;
 };
@@ -16,6 +17,11 @@ const TaskSchema = new Schema<TaskType>(
 			trim: true,
 			maxlength: 1024,
 		},
+    userID: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User',
+      required: true,
+    },
 		description: {
 			type: String,
 			required: false,
