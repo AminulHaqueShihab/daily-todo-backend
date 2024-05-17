@@ -6,11 +6,11 @@
 	"type": "module",
 	"scripts": {
 		"build": "npx tsc",
-		"test": "echo \"Error: no test specified\" && exit 1",
 		"start": "node dist/server.js",
-		"go": "node server.ts",
-		"server": "nodemon dist/server.js",
-		"dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/server.js\""
+		"server": "nodemon server",
+		"tsc": "tsc -p tsconfig.json",
+		"dev": "tsc --watch & NODE_ENV=development nodemon dist/server.js",
+		"go": "concurrently \"npx tsc --watch\" \"nodemon -q dist/server.js\""
 	},
 	"author": "Md Aminul Haque",
 	"license": "ISC",
