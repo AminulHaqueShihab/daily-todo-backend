@@ -24,7 +24,6 @@ type RequestType = Request & {
 	user?: mongoose.Document;
 };
 
-
 const createTask = async (req: RequestType, res: Response) => {
 	// Validate the request body
 	const { error } = validate(req.body);
@@ -66,7 +65,6 @@ const createTask = async (req: RequestType, res: Response) => {
 	}
 };
 
-
 /**
  * Validate the request body against a Joi schema.
  * @param {BodyType} data - The data to validate.
@@ -78,8 +76,8 @@ const validate = (data: BodyType): Joi.ValidationResult => {
 			'string.empty': `Title cannot be an empty field`,
 			'any.required': `Title is a required`,
 		}),
-		description: Joi.string(),
-		deadline: Joi.date().messages({
+		description: Joi.string().allow('').messages({}),
+		deadline: Joi.date().allow('').messages({
 			'date.base': `Deadline must be a date`,
 		}),
 	});

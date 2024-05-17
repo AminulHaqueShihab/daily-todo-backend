@@ -25,7 +25,6 @@ const TaskSchema = new Schema<TaskType>(
 		description: {
 			type: String,
 			required: false,
-			trim: true,
 		},
 		deadline: {
 			type: Date,
